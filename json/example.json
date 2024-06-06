@@ -1,0 +1,12 @@
+[
+  {
+    "name": "echo",
+    "command": "gnome-terminal",
+    "args": ["--", "sh", "-c", "bash -c 'echo EXAMPLE; exec bash'"]
+  },
+  {
+    "name": "help",
+    "command": "gnome-terminal",
+    "args": ["--", "sh", "-c", "bash -c 'help; exec bash'"]
+  }
+]

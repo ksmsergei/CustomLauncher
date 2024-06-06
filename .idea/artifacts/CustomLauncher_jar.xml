@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CustomLauncher:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CustomLauncher_jar</output-path>
+    <root id="archive" name="CustomLauncher.jar">
+      <element id="module-output" name="CustomLauncher" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20240303/json-20240303.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
