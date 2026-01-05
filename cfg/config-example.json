@@ -1,0 +1,8 @@
+{
+	"title": "Примеры запусков",
+	"closeOnLaunch": false,
+	"variants": [
+		{"name": "Калькулятор", "command": "calc"},
+		{"name": "Командная строка", "command": "cmd"}
+	]
+}

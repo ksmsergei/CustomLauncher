@@ -1,0 +1,8 @@
+{
+	"title": "ULTRAKILL",
+	"closeOnLaunch": true,
+	"variants": [
+		{"name": "С модами", "command": "calc"},
+		{"name": "Без модов", "command": "cmd"}
+	]
+}

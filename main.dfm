@@ -1,0 +1,149 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  ClientHeight = 518
+  ClientWidth = 559
+  Color = clBtnFace
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -24
+  Font.Name = 'Arial Narrow'
+  Font.Style = [fsBold]
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  TextHeight = 29
+  object lblName: TLabel
+    AlignWithMargins = True
+    Left = 20
+    Top = 0
+    Width = 519
+    Height = 29
+    Margins.Left = 20
+    Margins.Top = 0
+    Margins.Right = 20
+    Margins.Bottom = 0
+    Align = alTop
+    Caption = 'Deep Rock Galactic'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ExplicitWidth = 223
+  end
+  object lblStartVariant: TLabel
+    AlignWithMargins = True
+    Left = 21
+    Top = 49
+    Width = 518
+    Height = 15
+    Margins.Left = 21
+    Margins.Top = 20
+    Margins.Right = 20
+    Margins.Bottom = 5
+    Align = alTop
+    Caption = #1042#1067#1041#1045#1056#1048#1058#1045' '#1042#1040#1056#1048#1040#1053#1058' '#1047#1040#1055#1059#1057#1050#1040
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ExplicitWidth = 180
+  end
+  object lbVariants: TListBox
+    AlignWithMargins = True
+    Left = 20
+    Top = 69
+    Width = 519
+    Height = 383
+    Margins.Left = 20
+    Margins.Top = 0
+    Margins.Right = 20
+    Margins.Bottom = 0
+    Style = lbOwnerDrawFixed
+    Align = alClient
+    Color = clBtnFace
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ItemHeight = 32
+    Items.Strings = (
+      ' '#1048#1075#1088#1072#1090#1100' '#1074' Deep Rock Galactic'
+      ' '#1048#1075#1088#1072#1090#1100' '#1074' Deep Rock Galactic (DirectX 12)'
+      ' '#1048#1075#1088#1072#1090#1100' '#1074' Deep Rock Galactic (DirectX 11)'
+      ' '#1048#1075#1088#1072#1090#1100' '#1074' Deep Rock Galactic (Safe Mode)')
+    ParentFont = False
+    TabOrder = 0
+    OnDblClick = lbVariantsDblClick
+    ExplicitWidth = 513
+    ExplicitHeight = 366
+  end
+  object pnlButtons: TPanel
+    AlignWithMargins = True
+    Left = 0
+    Top = 462
+    Width = 559
+    Height = 36
+    Margins.Left = 0
+    Margins.Top = 10
+    Margins.Right = 0
+    Margins.Bottom = 20
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'pnlButtons'
+    ShowCaption = False
+    TabOrder = 1
+    ExplicitTop = 445
+    ExplicitWidth = 553
+    object btnCancel: TButton
+      AlignWithMargins = True
+      Left = 444
+      Top = 0
+      Width = 95
+      Height = 36
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 20
+      Margins.Bottom = 0
+      Align = alRight
+      Caption = #1054#1090#1084#1077#1085#1072
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnCancelClick
+      ExplicitLeft = 438
+    end
+    object btnStart: TButton
+      AlignWithMargins = True
+      Left = 308
+      Top = 0
+      Width = 116
+      Height = 36
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 20
+      Margins.Bottom = 0
+      Align = alRight
+      Caption = #1047#1072#1087#1091#1089#1090#1080#1090#1100
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnStartClick
+      ExplicitLeft = 302
+    end
+  end
+end
