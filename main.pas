@@ -100,13 +100,19 @@ type
     procedure lbVariantsDblClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnStartClick(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     FCloseOnLaunch: Boolean;
+    FDebugEnabled: Boolean;
     function FParseConfigFile: Boolean;
     { Private declarations }
   public
     { Public declarations }
   end;
+
+const
+  DEFAULT_WIDTH = 715;
+  DEFAULT_HEIGHT = 645;
 
 var
   frmMain: TfrmMain;
@@ -164,9 +170,6 @@ begin
   if not FParseConfigFile then
     Halt;
 
-  Width := 715;
-  Height := 645;
-
   lbVariants.Selected[0] := True;
 end;
 
@@ -174,6 +177,12 @@ procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   for var I := 0 to lbVariants.Items.Count - 1 do
     lbVariants.Items.Objects[I].Free;
+end;
+
+procedure TfrmMain.FormResize(Sender: TObject);
+begin
+  if FDebugEnabled then
+    Caption := Format('%d x %d', [Width, Height]);
 end;
 
 procedure TfrmMain.lbVariantsDblClick(Sender: TObject);
@@ -191,6 +200,9 @@ const
   NAME_FIELD = 'name';
   COMMAND_FIELD = 'command';
   CLOSE_ON_LAUNCH_FIELD = 'closeOnLaunch';
+  WIDTH_FIELD = 'windowSize.width';
+  HEIGHT_FIELD = 'windowSize.height';
+  DEBUG_FIELD = 'debug';
 begin
   Result := True;
 
@@ -280,6 +292,14 @@ begin
     // Необязательные параметры
     FCloseOnLaunch := LConfigObject.GetValue<Boolean>(CLOSE_ON_LAUNCH_FIELD, True);
 
+    Width := LConfigObject.GetValue<Integer>(WIDTH_FIELD, DEFAULT_WIDTH);
+    Height := LConfigObject.GetValue<Integer>(HEIGHT_FIELD, DEFAULT_HEIGHT);
+
+    FDebugEnabled := LConfigObject.GetValue<Boolean>(DEBUG_FIELD, False);
+    if FDebugEnabled then
+    begin
+      frmMain.BorderStyle := bsSizeToolWin;
+    end;
   finally
     LJSONValue.Free;
   end;

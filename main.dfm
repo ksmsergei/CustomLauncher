@@ -13,6 +13,7 @@ object frmMain: TfrmMain
   Position = poDesktopCenter
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnResize = FormResize
   TextHeight = 29
   object lblName: TLabel
     AlignWithMargins = True
