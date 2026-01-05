@@ -182,7 +182,7 @@ end;
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
   if FDebugEnabled then
-    Caption := Format('%d x %d', [Width, Height]);
+    Caption := Format('%d x %d', [ClientWidth, ClientHeight]);
 end;
 
 procedure TfrmMain.lbVariantsDblClick(Sender: TObject);
@@ -292,8 +292,8 @@ begin
     // Необязательные параметры
     FCloseOnLaunch := LConfigObject.GetValue<Boolean>(CLOSE_ON_LAUNCH_FIELD, True);
 
-    Width := LConfigObject.GetValue<Integer>(WIDTH_FIELD, DEFAULT_WIDTH);
-    Height := LConfigObject.GetValue<Integer>(HEIGHT_FIELD, DEFAULT_HEIGHT);
+    ClientWidth := LConfigObject.GetValue<Integer>(WIDTH_FIELD, DEFAULT_WIDTH);
+    ClientHeight := LConfigObject.GetValue<Integer>(HEIGHT_FIELD, DEFAULT_HEIGHT);
 
     FDebugEnabled := LConfigObject.GetValue<Boolean>(DEBUG_FIELD, False);
     if FDebugEnabled then
